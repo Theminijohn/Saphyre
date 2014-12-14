@@ -12,3 +12,7 @@ $jumbotron-bg:                    white;
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'font-awesome';
+
+// Import Folders
+@import 'projects/*';
+
