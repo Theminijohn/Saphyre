@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20141214235738) do
   create_table "contacts", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "mobile_number"
+    t.string   "home_number"
     t.integer  "user_id"
     t.integer  "project_id"
     t.datetime "created_at"
@@ -26,7 +28,9 @@ ActiveRecord::Schema.define(version: 20141214235738) do
   end
 
   add_index "contacts", ["first_name"], name: "index_contacts_on_first_name", using: :btree
+  add_index "contacts", ["home_number"], name: "index_contacts_on_home_number", using: :btree
   add_index "contacts", ["last_name"], name: "index_contacts_on_last_name", using: :btree
+  add_index "contacts", ["mobile_number"], name: "index_contacts_on_mobile_number", using: :btree
   add_index "contacts", ["project_id"], name: "index_contacts_on_project_id", using: :btree
   add_index "contacts", ["user_id"], name: "index_contacts_on_user_id", using: :btree
 

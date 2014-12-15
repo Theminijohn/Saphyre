@@ -5,6 +5,10 @@ class Contact < ActiveRecord::Base
   belongs_to :project
 
   # Validations
-  validates_presence_of :first_name, :last_name
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :project_id, presence: true
+  validates :user_id, presence: true
+  validates :mobile_number, presence: true, uniqueness: { scope: :project } 
 
 end

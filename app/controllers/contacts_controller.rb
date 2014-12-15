@@ -19,9 +19,12 @@ class ContactsController < ApplicationController
   end
 
   def create
+    @project = Project.find(params[:project_id])
     @contact = current_user.contacts.build(contact_params)
+    @contact.project_id = @project.id
+
     if @contact.save
-      redirect_to @contact, notice: 'Contact was successfully created'
+      redirect_to @project, notice: 'Success'
     else
       render :new
     end
@@ -46,6 +49,6 @@ class ContactsController < ApplicationController
     end
 
     def contact_params
-      params.require(:contact).permit(:first_name, :last_name)
+      params.require(:contact).permit(:first_name, :last_name, :mobile_number, :home_number)
     end
 end
