@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
   end
 
   def show
+    @contact = Contact.find(params[:id])
   end
 
   def new
@@ -19,15 +20,24 @@ class ContactsController < ApplicationController
 
   def create
     @contact = current_user.contacts.build(contact_params)
-    @contact.save
+    if @contact.save
+      redirect_to @contact, notice: 'Contact was successfully created'
+    else
+      render :new
+    end
   end
 
   def update
-    @contact.update(contact_params)
+    if @contact.update(contact_params)
+      redirect_to @contact, notice: 'Contact was successfully updated'
+    else
+      render :edit
+    end
   end
 
   def destroy
     @contact.destroy
+    redirect_to root_path, notice: 'Contact successfully deleted'
   end
 
   private
