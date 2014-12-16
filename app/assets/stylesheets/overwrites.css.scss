@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700);
 body{
   background: #fff;
   font-family: 'Lato', Calibri, Arial, sans-serif;
@@ -109,12 +108,20 @@ body.lock{
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 23px;
   padding: 0;
   text-align: center;
   background: #242A34;
-  color: #fff;
+  a {
+    color: #3BAFDA;
+    display: block;
+    margin-top: 14px;
+    text-decoration: none;
+    font-family: 'Comfortaa', cursive;
+    &:hover {
+      color: #29a0cb;
+    }
+  }
 }
 .logo-brand img{
   width: auto;
@@ -207,9 +214,9 @@ ul.nav-user li.dropdown a.dropdown-toggle{
   display: block;
   color: #656D78;
   text-decoration: none;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   max-width: 220px;
 }
 .avatar {
@@ -247,9 +254,9 @@ ul.nav-user li.dropdown a.dropdown-toggle{
   display: block;
   position: relative;
   height: 60px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   text-decoration: none;
   color: #656D78;
 }
@@ -261,9 +268,9 @@ ul.nav-user li.dropdown a.dropdown-toggle{
 }
 .nav-dropdown-content.static-list ul li .small-caps,
 .nav-dropdown-content ul li a .small-caps{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 12px;
   display: block;
   color: #AAB2BD;
@@ -632,9 +639,9 @@ ul.sidebar-menu li ul.submenu li a{
   position: relative;
   font-size: 13px;
   border-left: 1px solid #656D78;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 ul.sidebar-menu li ul.submenu li a .span-sidebar{
   position: absolute;
@@ -663,17 +670,17 @@ ul.sidebar-menu li ul.submenu li a:before{
 ul.sidebar-menu.online-user li a{
   padding: 10px 20px 10px 60px;
   height: 55px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 ul.sidebar-menu.online-user li a .small-caps{
   font-size: 11px;
   color: #656D78;
   display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 ul.sidebar-menu.online-user li a .ava-sidebar{
   width: 35px;
@@ -1146,6 +1153,7 @@ a.bg-dark:hover       {background-color: #434A54;}
 .bg-info .btn.btn-info:focus{
   background-color: #1C86AF;
   border-color: #1C86AF;
+  outline: 0!important;
 }
 .bg-danger .btn.btn-danger{
   background-color: #D1462C;
@@ -3199,6 +3207,7 @@ fieldset[disabled] .btn-success.active {
 .open .dropdown-toggle.btn-info {
   background-color: #29A0CB;
   border-color: #29A0CB;
+  outline: 0!important;
 }
 .btn-info.disabled,
 .btn-info[disabled],
