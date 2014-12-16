@@ -9,24 +9,47 @@
 </head>
 <body>
 
-<%= render 'layouts/header'  %>
 
-<div class="container">
-  <% flash.each do |name, msg| %>
-    <div class="alert alert-dismissible fade in" role="alert">
-      <button type="button" class="close" data-dismiss="alert">
-        <span aria-hidden="true">
-          <%= fa_icon 'check' %>
-        </span>
-      </button>
-      <%= msg %>
-    </div>
-  <% end %>
-</div>
+<div class="wrapper">
 
-<%= yield %>
+  <!-- Navbar -->
+  <%= render 'layouts/header' %>
+  
+  <!-- Sidebar Left -->
+  <%= render 'layouts/sidebar' %>
+  
+  <!-- Sidebar Right -->
+  <%= render 'layouts/right_nav' %>
+  
+  
+  
+  <!-- Page Content -->
+  <div class="page-content">
 
-<%= render 'layouts/footer'  %>
+    <div class="container">
+    
+      <!-- Flash Message -->
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-warning alert-bold-border fade in alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <p><strong>Welcome!</strong></p>
+          <p class="text-muted">
+            <%= msg %>
+          </p>
+        </div>
+      <% end %>
+
+      <!-- Content -->
+      <%= yield %>
+
+    </div><!-- /.container -->
+    
+    <!-- FOOTER -->
+    <%= render 'layouts/footer'  %>
+
+  </div><!-- /.page-content -->
+</div><!-- /.wrapper -->
+
 
 </body>
 </html>

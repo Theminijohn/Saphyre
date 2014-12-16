@@ -1,0 +1,25 @@
+.NewProject {
+  padding: 60px 0;
+  .BigInput {
+     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    vertical-align: middle;
+    font-size: 22px;
+    line-height: 34px;
+    outline: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border-color: transparent;
+    border-bottom: 1px dashed #acb5be;
+    background: transparent;
+    text-shadow: none;
+    &:focus {
+      border-bottom: 1px dashed #37BC9B;
+    }
+  }
+}

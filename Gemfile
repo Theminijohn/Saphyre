@@ -15,6 +15,7 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'rails_config'
+gem 'jquery-turbolinks'
 
 group :development, :test do
   gem 'spring'

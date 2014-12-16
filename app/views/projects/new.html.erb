@@ -1,5 +1,36 @@
-<h1>New project</h1>
+<h1 class="page-heading">New Project <small>Sub heading here</small></h1>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
 
-<%= link_to 'Back', projects_path %>
+    <% if @project.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+        <ul>
+        <% @project.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <div class="NewProject text-center">
+      <%= form_for(@project) do |f| %>
+
+        <div class="form-group">
+          <%= f.text_field :name, class: 'BigInput', placeholder: 'Project name', autofocus: true, required: true, autocomplete: 'off' %>
+        </div>
+
+        <div class="form-group">
+          <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+            <i class="fa fa-plus"></i> Create Project
+          <% end %>
+        </div>
+
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
