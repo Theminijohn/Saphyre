@@ -24,7 +24,7 @@ class ContactsController < ApplicationController
     @contact.project_id = @project.id
 
     if @contact.save
-      redirect_to @project, notice: 'Success'
+      redirect_to @project, notice: 'Contact was successfully created'
     else
       render :new
     end

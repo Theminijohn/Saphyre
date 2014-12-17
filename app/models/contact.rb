@@ -11,4 +11,9 @@ class Contact < ActiveRecord::Base
   validates :user_id, presence: true
   validates :mobile_number, presence: true, uniqueness: { scope: :project } 
 
+  # Name
+  def name
+    [first_name, last_name].join(' ')
+  end
+
 end

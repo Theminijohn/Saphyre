@@ -1,1 +1,124 @@
-<h1 class="page-heading"><%= @project.name %> <small>Sub heading here</small></h1> 
+<div class="the-box bg-dark no-border no-margin heading">
+  <div class="row">
+    <div class="col-sm-6">
+      <h1>
+        <i class="fa fa-suitcase icon-lg icon-circle icon-bordered"></i>
+        <%= @project.name.capitalize %>
+      </h1>
+    </div><!-- /.col-sm-6 -->
+    <div class="col-sm-6 text-right">
+      <button class="btn btn-info btn-sm"><i class="fa fa-cloud-upload"></i></button>
+      <div class="btn-group">
+        <button class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-cog"></i>
+        </button>
+        <ul class="dropdown-menu info pull-right square margin-list text-left" role="menu">
+          <li><a href="#fakelink">Action</a></li>
+          <li><a href="#fakelink">Another action</a></li>
+          <li class="active"><a href="#fakelink">Active</a></li>
+          <li class="divider"></li>
+          <li><a href="#fakelink">Separated link</a></li>
+        </ul>
+      </div>
+    </div><!-- /.col-sm-6 -->
+  </div><!-- /.row -->
+</div>
+
+<br>
+
+<div class="container">
+    
+  <div class="row">
+    <div class="col-md-9">
+     <section class="panel">
+
+      <table class="table table-bordered table-hover table-condensed list_specific_index_table">
+        <thead>
+          <tr class="filters">
+
+            <th>
+              Name         
+            </th>
+
+            <th>
+              Mobile Number
+            </th>
+
+            <th class="text-center">
+              Response
+            </th>
+
+            <th class="text-center" style="width: 150px">
+              Touched
+            </th>
+
+            <th class="text-center">
+              Spec
+            </th>
+
+            <th class="text-center">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+          <% @project_contacts.each do |contact| %>
+            <tr>
+              <td width="250px">
+                Alefantinos
+              </td>
+
+              <td width="1000px">
+                Alefantinos
+              </td>
+
+              <td width="180px" class="text-center response_td">
+                  <i class="fa fa-circle"></i>
+              </td>
+
+              <td width="180px" class="text-center touched_td">
+                  <i class="fa fa-bolt"></i>
+              </td>
+
+              <td width="150px" class="text-center bug_td">
+                  <i class="fa fa-bug"></i>
+              </td>
+
+              <td width="150px" class="text-center">          
+                <%= link_to project_contact_path(@project, contact), class: 'btn btn-info btn-xs' do %>
+                  <i class="fa fa-comment"></i> &nbsp; <b>Show</b>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+            
+        </tbody>
+      </table>
+    </section>
+    </div>
+    <div class="col-md-3">
+      
+      <div class="the-box no-border bg-dark rounded tiles-information">
+        <i class="fa fa-users icon-bg"></i>
+        <div class="tiles-inner text-center">
+          <p>Contacts in Project</p>
+          <h1 class="bolded"><%= @project.contacts.count %></h1> 
+          <div class="progress no-rounded progress-xs">
+            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+            </div><!-- /.progress-bar .progress-bar-info -->
+          </div><!-- /.progress .no-rounded -->
+          <p><small>Better than yesterday ( 2,5% )</small></p>
+        </div><!-- /.tiles-inner -->
+      </div>
+
+      <ul class="nav nav-tabs right-position">
+        <li class="active"><a href="#fakelink">Overview</a></li>
+        <li><a href="#fakelink">Contacts</a></li>
+        <li><a href="#fakelink">Import</a></li>
+      </ul>
+
+
+
+    </div>
+  </div>
+</div>

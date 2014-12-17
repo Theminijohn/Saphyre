@@ -1,0 +1,14 @@
+.ProjectsIndex {
+  table tr td {
+    border-top: none;
+    border-bottom: 1px solid #e7eaec;
+    padding: 10px 15px;
+    vertical-align: middle;
+  }
+  td.ProjectTitle {
+    a {
+      color: #656D78;
+      font-weight: bold;
+    }
+  }
+}
